@@ -1,6 +1,6 @@
 package sokoban;
 
-import java.awt.Point;
+import android.graphics.Point;
 
 public class Level {
 	
