@@ -21,7 +21,7 @@ public class SwipeGestureDetector extends GestureDetector.SimpleOnGestureListene
     }
 
     @Override
-    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
 
         float deltaX = e1.getX() - e2.getX();
         float deltaY = e1.getY() - e2.getY();
