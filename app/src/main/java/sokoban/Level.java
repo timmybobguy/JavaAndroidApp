@@ -135,6 +135,13 @@ public class Level {
 		return this.x;
 		
 	}
+
+	public char getXY(int x, int y) {
+
+		return allPlaceables[x][y].symbol;
+
+	}
+
 	
 	public int getHeight() {
 		

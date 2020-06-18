@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.MotionEvent;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -34,21 +36,51 @@ public class MainActivity extends AppCompatActivity {
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
 
         //Adding grid layout testing
-        TableLayout.LayoutParams params = new TableLayout.LayoutParams(100,100);
 
+        //TableLayout.LayoutParams params = new TableLayout.LayoutParams(100,100);
         TableLayout table = findViewById(R.id.testTable);
 
-        TableRow row = new TableRow(this);
-        row.setLayoutParams(params);
+        for (int y = 0; y < game.selectedLevel.getHeight(); y++) {
 
-        ImageView image = new ImageView(this);
-        image.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+            TableRow row = new TableRow(this);
+            row.setGravity(Gravity.CENTER);
 
-        image.setLayoutParams(params);
+            for (int x = 0; x < game.selectedLevel.getWidth(); x++) {
 
-        row.addView(image);
+                // THIS GETS CHARACTER
+                //game.selectedLevel.getXY(x,y);
 
-        table.addView(row);
+                ImageView cell = new ImageView(this);
+
+                cell.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                cell.setAdjustViewBounds(true);
+                cell.setImageResource(R.drawable.cake);
+
+
+                row.addView(cell);
+
+            }
+
+            table.addView(row);
+
+        }
+
+        //TableRow row = findViewById(R.id.testRow1);
+        //row.setLayoutParams(params);
+
+        //ImageView image = new ImageView(this);
+
+
+
+        //image.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        //image.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        //image.setAdjustViewBounds(true);
+        //image.setImageResource(R.drawable.cake);
+        //image.setLayoutParams(params);
+
+        //row.addView(image);
+
+        //table.addView(row);
 
     }
 
