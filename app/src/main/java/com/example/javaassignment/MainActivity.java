@@ -48,13 +48,35 @@ public class MainActivity extends AppCompatActivity {
             for (int x = 0; x < game.selectedLevel.getWidth(); x++) {
 
                 // THIS GETS CHARACTER
-                //game.selectedLevel.getXY(x,y);
+                char icon = game.selectedLevel.getXY(x,y);
 
                 ImageView cell = new ImageView(this);
 
                 cell.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 cell.setAdjustViewBounds(true);
-                cell.setImageResource(R.drawable.cake);
+
+                switch (icon) {
+
+                    case '+':
+                        cell.setImageResource(R.drawable.goal);
+                        break;
+                    case '#':
+                        cell.setImageResource(R.drawable.wall);
+                        break;
+                    case '.':
+                        cell.setImageResource(R.drawable.floor);
+                        break;
+                    case 'w':
+                    case 'W':
+                        cell.setImageResource(R.drawable.player);
+                        break;
+                    case 'x':
+                        cell.setImageResource(R.drawable.crate);
+                        break;
+                    case 'X':
+                        cell.setImageResource(R.drawable.crate_ontarget);
+                        break;
+                }
 
 
                 row.addView(cell);
