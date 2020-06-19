@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -17,7 +18,7 @@ import android.widget.TextView;
 import sokoban.Direction;
 import sokoban.Game;
 
-public class MainActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
 
     private TextView testTextView;
     private GestureDetectorCompat gestureDetectorCompat = null;
@@ -30,14 +31,21 @@ public class MainActivity extends AppCompatActivity {
 
         game = new Game();
 
-        game.addLevel("Test1", 5, 6,"######" +"#+x+.#" +"#..w.#" +"#....#" +"######");
+        game.addLevel("This is the first level", 5, 6,"######" +"#+x+.#" +"#..w.#" +"#....#" +"######");
 
         //testTextView = findViewById(R.id.testText);
         //tv1.setText(game.toString());
+        TextView nameOfLevel = findViewById(R.id.levelName);
+        nameOfLevel.setText(game.getCurrentLevelName());
+
+
+
 
         SwipeGestureDetector gestureListener = new SwipeGestureDetector();
         gestureListener.setActivity(this);
         gestureDetectorCompat = new GestureDetectorCompat(this, gestureListener);
+
+        //getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
 
         //Adding grid layout testing
 
@@ -99,6 +107,10 @@ public class MainActivity extends AppCompatActivity {
             View child = table.getChildAt(i);
             if (child instanceof TableRow) ((ViewGroup) child).removeAllViews();
         }
+
+        // Updating score
+        TextView progressBar = findViewById(R.id.progressBar);
+        progressBar.setText(game.selectedLevel.getCompletedCount() + " out of " + game.selectedLevel.targetCount);
 
 
         for (int y = 0; y < game.selectedLevel.getHeight(); y++) {

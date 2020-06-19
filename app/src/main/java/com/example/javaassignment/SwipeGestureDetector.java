@@ -10,13 +10,13 @@ public class SwipeGestureDetector extends GestureDetector.SimpleOnGestureListene
     private static int MAX_SWIPE_DISTANCE_X = 1000;
     private static int MAX_SWIPE_DISTANCE_Y = 1000;
 
-    private MainActivity activity = null;
+    private GameActivity activity = null;
 
-    public MainActivity getActivity() {
+    public GameActivity getActivity() {
         return activity;
     }
 
-    public void setActivity(MainActivity activity) {
+    public void setActivity(GameActivity activity) {
         this.activity = activity;
     }
 
