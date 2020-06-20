@@ -3,6 +3,7 @@ package com.example.javaassignment;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GestureDetectorCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -28,6 +29,8 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Intent i = getIntent();
+        //game = (Game) i.getSerializableExtra("game");
 
         game = new Game();
 
@@ -38,7 +41,8 @@ public class GameActivity extends AppCompatActivity {
         TextView nameOfLevel = findViewById(R.id.levelName);
         nameOfLevel.setText(game.getCurrentLevelName());
 
-
+        TextView moves = findViewById(R.id.textMoves);
+        moves.setText("Moves: 0");
 
 
         SwipeGestureDetector gestureListener = new SwipeGestureDetector();
@@ -111,6 +115,9 @@ public class GameActivity extends AppCompatActivity {
         // Updating score
         TextView progressBar = findViewById(R.id.progressBar);
         progressBar.setText(game.selectedLevel.getCompletedCount() + " out of " + game.selectedLevel.targetCount);
+
+        TextView moves = findViewById(R.id.textMoves);
+        moves.setText("Moves: " + game.selectedLevel.moveCount);
 
 
         for (int y = 0; y < game.selectedLevel.getHeight(); y++) {
