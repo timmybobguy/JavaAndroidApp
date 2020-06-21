@@ -29,12 +29,18 @@ public class GameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Intent i = getIntent();
-        //game = (Game) i.getSerializableExtra("game");
+
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("title");
+        String x = intent.getStringExtra("x");
+        String y = intent.getStringExtra("y");
+        String levelString = intent.getStringExtra("levelString");
 
         game = new Game();
 
-        game.addLevel("This is the first level", 5, 6,"######" +"#+x+.#" +"#..w.#" +"#....#" +"######");
+        game.addLevel(title, Integer.parseInt(x), Integer.parseInt(y), levelString);
+
+        //game.addLevel("This is the first level", 5, 6,"######" +"#+x+.#" +"#..w.#" +"#....#" +"######");
 
         //testTextView = findViewById(R.id.testText);
         //tv1.setText(game.toString());
