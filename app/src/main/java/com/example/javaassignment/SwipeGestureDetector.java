@@ -3,6 +3,8 @@ package com.example.javaassignment;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 
+import sokoban.Direction;
+
 public class SwipeGestureDetector extends GestureDetector.SimpleOnGestureListener {
 
     private static int MIN_SWIPE_DISTANCE_X = 100;
@@ -31,17 +33,21 @@ public class SwipeGestureDetector extends GestureDetector.SimpleOnGestureListene
 
         if (deltaXAbs == MIN_SWIPE_DISTANCE_X && deltaXAbs <= MAX_SWIPE_DISTANCE_X) {
             if (deltaX > 0) {
-                this.activity.displayMessage("SWIPED TO LEFT");
+                //this.activity.displayMessage("SWIPED TO LEFT");
+                this.activity.game.move(Direction.LEFT);
             } else {
-                this.activity.displayMessage("SWIPED TO RIGHT");
+                //this.activity.displayMessage("SWIPED TO RIGHT");
+                this.activity.game.move(Direction.RIGHT);
             }
         }
 
         if (deltaYAbs == MIN_SWIPE_DISTANCE_Y && deltaYAbs <= MAX_SWIPE_DISTANCE_Y) {
             if (deltaY > 0) {
-                this.activity.displayMessage("SWIPED TO UP");
+                //this.activity.displayMessage("SWIPED TO UP");
+                this.activity.game.move(Direction.UP);
             } else {
-                this.activity.displayMessage("SWIPED TO DOWN");
+                //this.activity.displayMessage("SWIPED TO DOWN");
+                this.activity.game.move(Direction.DOWN);
             }
         }
 

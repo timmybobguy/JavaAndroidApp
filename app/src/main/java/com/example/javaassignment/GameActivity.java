@@ -23,7 +23,7 @@ public class GameActivity extends AppCompatActivity {
 
     private TextView testTextView;
     private GestureDetectorCompat gestureDetectorCompat = null;
-    private Game game = null;
+    public Game game = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
