@@ -60,8 +60,8 @@
 
             <Button
                 android:id="@+id/up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="UP" />
         </TableRow>
 
@@ -72,14 +72,14 @@
 
             <Button
                 android:id="@+id/left"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="LEFT" />
 
             <Button
                 android:id="@+id/right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="RIGHT" />
         </TableRow>
 
@@ -90,8 +90,8 @@
 
             <Button
                 android:id="@+id/down"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="DOWN" />
 
         </TableRow>

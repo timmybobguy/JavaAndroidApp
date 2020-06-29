@@ -39,8 +39,7 @@ public class GameActivity extends AppCompatActivity {
         game = new Game();
 
         game.addLevel(title, Integer.parseInt(x), Integer.parseInt(y), levelString);
-
-        //game.addLevel("This is the first level", 5, 6,"######" +"#+x+.#" +"#..w.#" +"#....#" +"######");
+        
 
         //testTextView = findViewById(R.id.testText);
         //tv1.setText(game.toString());

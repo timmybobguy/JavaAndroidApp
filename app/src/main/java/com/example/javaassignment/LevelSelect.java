@@ -21,9 +21,9 @@ public class LevelSelect extends AppCompatActivity {
         setContentView(R.layout.activity_level_select);
 
         items = new ArrayList<>();
-        items.add(new String[]{"Level #1", "This is a very simple level", "5", "6", "#######+x+.##..w.##....#######"});
-        items.add(new String[]{"Level #2", "This is a slightly harder level", "test"});
-        items.add(new String[]{"Level #3", "This is a hard level", "test"});
+        items.add(new String[]{"Level #1", "This is a very simple level", "5", "6", "#######+x..##..w.##....#######"});
+        items.add(new String[]{"Level #2", "This is a slightly harder level", "7", "16", "#################......+.......##.+........+...##..............##x...x...x.....##.............w#################"});
+        items.add(new String[]{"Level #3", "This is a hard level", "8", "5", "######+.+##...##.x.##.x.##...##.w.######"});
         items.add(new String[]{"Level #4", "This is a level that can't be finished", "test"});
 
         recyclerView = findViewById(R.id.recyclerView);
